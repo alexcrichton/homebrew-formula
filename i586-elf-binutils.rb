@@ -1,6 +1,6 @@
 require 'formula'
 
-class I586Binutils < Formula
+class I586ElfBinutils < Formula
   homepage 'http://gcc.gnu.org'
   url 'http://ftp.gnu.org/gnu/binutils/binutils-2.23.tar.gz'
   sha1 '470c388c97ac8d216de33fa397d7be9f96c3fe04'
@@ -18,6 +18,7 @@ class I586Binutils < Formula
                              "--prefix=#{prefix}"
       system 'make all'
       system 'make install'
+      FileUtils.mv lib, libexec
     end
   end
 
