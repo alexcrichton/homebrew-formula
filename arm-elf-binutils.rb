@@ -14,7 +14,7 @@ class ArmElfBinutils < Formula
     ENV['LD'] = '/usr/local/bin/gcc-4.2'
 
     mkdir 'build' do
-      system '../configure', '--disable-nls', '--target=arm-eabi-elf',
+      system '../configure', '--disable-nls', '--target=arm-elf-eabi',
                              "--prefix=#{prefix}"
       system 'make all'
       system 'make install'

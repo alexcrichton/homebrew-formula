@@ -15,7 +15,7 @@ class ArmElfGdb < Formula
     ENV['LD'] = '/usr/local/bin/gcc-4.2'
 
     mkdir 'build' do
-      system '../configure', '--target=arm-eabi-elf', "--prefix=#{prefix}"
+      system '../configure', '--target=arm-elf-eabi', "--prefix=#{prefix}"
       system 'make'
       system 'make install'
       FileUtils.rm_rf share/"locale"
