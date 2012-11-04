@@ -15,6 +15,7 @@ class ArmElfBinutils < Formula
 
     mkdir 'build' do
       system '../configure', '--disable-nls', '--target=arm-elf-eabi',
+                             '--enable-gold=yes',
                              "--prefix=#{prefix}"
       system 'make all'
       system 'make install'

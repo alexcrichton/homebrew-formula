@@ -15,6 +15,7 @@ class I586ElfBinutils < Formula
 
     mkdir 'build' do
       system '../configure', '--disable-nls', '--target=i586-elf',
+                             '--enable-gold=yes',
                              "--prefix=#{prefix}"
       system 'make all'
       system 'make install'
