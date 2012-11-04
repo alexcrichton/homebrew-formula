@@ -15,7 +15,7 @@ class X64ElfGdb < Formula
     ENV['LD'] = '/usr/local/bin/gcc-4.2'
 
     mkdir 'build' do
-      system '../configure', '--target=x86_64-elf', "--prefix=#{prefix}"
+      system '../configure', '--target=x86_64-pc-linux', "--prefix=#{prefix}"
       system 'make'
       system 'make install'
       FileUtils.rm_rf share/"locale"
