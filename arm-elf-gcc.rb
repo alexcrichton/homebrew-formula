@@ -27,10 +27,10 @@ class ArmElfGcc < Formula
                              "--without-headers"
       system 'make all-gcc'
       system 'make install-gcc'
+      FileUtils.ln_sf binutils.prefix/"arm-elf-eabi", prefix/"arm-elf-eabi"
       system 'make all-target-libgcc'
       system 'make install-target-libgcc'
       FileUtils.rm_rf share/"man"/"man7"
-      FileUtils.ln_sf binutils.prefix/"arm-elf-eabi", prefix/"arm-elf-eabi"
     end
   end
 end

@@ -27,10 +27,10 @@ class X64ElfGcc < Formula
                              "--without-headers"
       system 'make all-gcc'
       system 'make install-gcc'
+      FileUtils.ln_sf binutils.prefix/"x86_64-elf", prefix/"x86_64-elf"
       system 'make all-target-libgcc'
       system 'make install-target-libgcc'
       FileUtils.rm_rf share/"man"/"man7"
-      FileUtils.ln_sf binutils.prefix/"x86_64-elf", prefix/"x86_64-elf"
     end
   end
 end
