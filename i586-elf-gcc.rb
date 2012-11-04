@@ -29,6 +29,7 @@ class I586ElfGcc < Formula
       system 'make install-gcc'
       system 'make all-target-libgcc'
       system 'make install-target-libgcc'
+      FileUtils.rm_rf share/"man"/"man7"
     end
   end
 end
