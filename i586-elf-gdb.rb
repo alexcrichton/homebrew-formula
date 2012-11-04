@@ -18,6 +18,8 @@ class I586ElfGdb < Formula
       system '../configure', '--target=i586-elf', "--prefix=#{prefix}"
       system 'make'
       system 'make install'
+      FileUtils.rm_rf share/"locale"
+      FileUtils.mv lib, libexec
     end
   end
 end

@@ -18,6 +18,8 @@ class X64ElfGdb < Formula
       system '../configure', '--target=x86_64-elf', "--prefix=#{prefix}"
       system 'make'
       system 'make install'
+      FileUtils.rm_rf share/"locale"
+      FileUtils.mv lib, libexec
     end
   end
 end
