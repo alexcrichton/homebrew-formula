@@ -9,10 +9,10 @@ class I586ElfGcc < Formula
   depends_on 'gmp'
   depends_on 'libmpc'
   depends_on 'mpfr'
-  depends_on 'i586-elf-binutils'
+  depends_on 'x64-elf-binutils'
 
   def install
-    binutils = Formula.factory 'i586-elf-binutils'
+    binutils = Formula.factory 'x64-elf-binutils'
 
     ENV['CC'] = '/usr/local/bin/gcc-4.2'
     ENV['CXX'] = '/usr/local/bin/g++-4.2'
@@ -21,7 +21,7 @@ class I586ElfGcc < Formula
     ENV['PATH'] += ":#{binutils.prefix/"bin"}"
 
     mkdir 'build' do
-      system '../configure', '--disable-nls', '--target=i586-elf',
+      system '../configure', '--disable-nls', '--target=x86_64-elf',
                              "--prefix=#{prefix}",
                              "--enable-languages=c",
                              "--without-headers"
