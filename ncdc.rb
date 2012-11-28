@@ -2,8 +2,8 @@ require 'formula'
 
 class Ncdc < Formula
   homepage 'http://dev.yorhel.nl/ncdc'
-  url 'http://dev.yorhel.nl/download/ncdc-1.12.tar.gz'
-  sha1 'f25e1960ca1f1a5dc8a028debbb748d13382bfb0'
+  url 'http://dev.yorhel.nl/download/ncdc-1.13.tar.gz'
+  sha1 'e919dfcf9ff11d48dd133cbd7709ebd317666295'
   head 'https://github.com/yorhel/ncdc.git'
 
   depends_on 'glib'
