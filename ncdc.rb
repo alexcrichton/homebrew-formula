@@ -2,16 +2,17 @@ require 'formula'
 
 class Ncdc < Formula
   homepage 'http://dev.yorhel.nl/ncdc'
-  url 'http://dev.yorhel.nl/download/ncdc-1.13.tar.gz'
-  sha1 'e919dfcf9ff11d48dd133cbd7709ebd317666295'
+  url 'http://dev.yorhel.nl/download/ncdc-1.14.tar.gz'
   head 'https://github.com/yorhel/ncdc.git'
 
   depends_on 'glib'
   depends_on 'libffi'
+  depends_on 'pkg-config'
   depends_on 'gnutls'
   depends_on 'sqlite'
   depends_on 'gettext'
   depends_on 'autoconf' => :build if ARGV.build_head?
+  depends_on 'automake' => :build if ARGV.build_head?
 
   def patches
     DATA
