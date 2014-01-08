@@ -21,7 +21,7 @@ class I386ElfGcc < Formula
     ENV['PATH'] += ":#{binutils.prefix/"bin"}"
 
     mkdir 'build' do
-      system '../configure', '--disable-nls', '--target=i386-elf',
+      system '../configure', '--disable-nls', '--target=i386-elf', '--disable-werror',
                              "--prefix=#{prefix}",
                              "--enable-languages=c",
                              "--without-headers"
