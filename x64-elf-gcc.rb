@@ -21,7 +21,7 @@ class X64ElfGcc < Formula
     ENV['PATH'] += ":#{binutils.prefix/"bin"}"
 
     mkdir 'build' do
-      system '../configure', '--disable-nls', '--target=x86_64-elf',
+      system '../configure', '--disable-nls', '--target=x86_64-elf','--disable-werror',
                              "--prefix=#{prefix}",
                              "--enable-languages=c",
                              "--without-headers"

@@ -9,11 +9,6 @@ class I586ElfGdb < Formula
   depends_on 'i586-elf-gcc'
 
   def install
-   # ENV['CC'] = '/usr/local/bin/gcc-4.2'
-   # ENV['CXX'] = '/usr/local/bin/g++-4.2'
-   # ENV['CPP'] = '/usr/local/bin/cpp-4.2'
-   # ENV['LD'] = '/usr/local/bin/gcc-4.2'
-
     mkdir 'build' do
       system '../configure', '--target=i586-elf', "--prefix=#{prefix}", "--disable-werror"
       system 'make'

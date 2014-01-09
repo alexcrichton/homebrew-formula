@@ -21,7 +21,7 @@ class ArmElfGcc < Formula
     ENV['PATH'] += ":#{binutils.prefix/"bin"}"
 
     mkdir 'build' do
-      system '../configure', '--disable-nls', '--target=arm-elf-eabi',
+      system '../configure', '--disable-nls', '--target=arm-elf-eabi', '--disable-werror',
                              "--prefix=#{prefix}",
                              "--enable-languages=c",
                              "--without-headers"
