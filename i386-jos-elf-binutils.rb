@@ -1,6 +1,6 @@
 require 'formula'
 
-class X64ElfBinutils < Formula
+class I386JosElfBinutils < Formula
   homepage 'http://gcc.gnu.org'
   url 'http://ftp.gnu.org/gnu/binutils/binutils-2.23.tar.gz'
   sha1 '470c388c97ac8d216de33fa397d7be9f96c3fe04'
@@ -14,7 +14,8 @@ class X64ElfBinutils < Formula
     ENV['LD'] = '/usr/local/bin/gcc-4.2'
 
     mkdir 'build' do
-      system '../configure', '--disable-nls', '--target=x86_64-elf','--disable-werror',
+      system '../configure', '--disable-nls', '--target=i386-jos-elf',
+                             '--disable-werror',
                              '--enable-gold=yes',
                              "--prefix=#{prefix}"
       system 'make all'
