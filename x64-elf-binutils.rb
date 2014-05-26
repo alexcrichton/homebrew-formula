@@ -8,6 +8,7 @@ class X64ElfBinutils < Formula
   depends_on 'apple-gcc42' => :build
 
   def install
+    ENV['CFLAGS']="-Wno-error=deprecated-declarations"
     ENV['CC'] = '/usr/local/bin/gcc-4.2'
     ENV['CXX'] = '/usr/local/bin/g++-4.2'
     ENV['CPP'] = '/usr/local/bin/cpp-4.2'
