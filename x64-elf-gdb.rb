@@ -9,6 +9,7 @@ class X64ElfGdb < Formula
   depends_on 'x64-elf-gcc'
 
   def install
+    ENV['CFLAGS']="-Wno-error=deprecated-declarations"
     ENV['CC'] = '/usr/local/bin/gcc-4.2'
     ENV['CXX'] = '/usr/local/bin/g++-4.2'
     ENV['CPP'] = '/usr/local/bin/cpp-4.2'
