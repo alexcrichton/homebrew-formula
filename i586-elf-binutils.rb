@@ -1,26 +1,23 @@
 require 'formula'
 
 class I586ElfBinutils < Formula
-  homepage 'http://gcc.gnu.org'
-  url 'http://ftp.gnu.org/gnu/binutils/binutils-2.23.tar.gz'
-  sha1 '470c388c97ac8d216de33fa397d7be9f96c3fe04'
-
-  depends_on 'apple-gcc42' => :build
+  homepage "http://www.gnu.org/software/binutils/binutils.html"
+  url "http://ftpmirror.gnu.org/binutils/binutils-2.25.tar.gz"
+  mirror "http://ftp.gnu.org/gnu/binutils/binutils-2.25.tar.gz"
+  sha1 "f10c64e92d9c72ee428df3feaf349c4ecb2493bd"
 
   def install
-    ENV['CC'] = '/usr/local/bin/gcc-4.2'
-    ENV['CXX'] = '/usr/local/bin/g++-4.2'
-    ENV['CPP'] = '/usr/local/bin/cpp-4.2'
-    ENV['LD'] = '/usr/local/bin/gcc-4.2'
-
-    mkdir 'build' do
-      system '../configure', '--disable-nls', '--target=i586-elf',
-                             '--enable-gold=yes',
-                             "--prefix=#{prefix}"
-      system 'make all'
-      system 'make install'
-      FileUtils.mv lib, libexec
-    end
+    system "./configure", "--disable-debug",
+                          "--disable-dependency-tracking",
+                          "--prefix=#{prefix}",
+                          "--infodir=#{info}",
+                          "--mandir=#{man}",
+                          "--target=i586-elf",
+                          "--disable-werror",
+                          "--enable-interwork"
+    system "make"
+    system "make", "install"
+    FileUtils.rm_rf share
   end
 
 end
