@@ -10,7 +10,7 @@ class X64ElfGdb < Formula
 
   def install
     mkdir 'build' do
-      system '../configure', '--target=x86_64-pc-linux', "--prefix=#{prefix}",'--disable-werror',
+      system '../configure', '--target=x86_64-pc-linux', "--prefix=#{prefix}",'--disable-werror'
       system 'make'
       system 'make install'
       FileUtils.rm_rf share/"locale"
